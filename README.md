@@ -97,3 +97,131 @@ mkdir -p /home/pepe/prueba/dir3/dir31/dir312
 
 6. Copiar el archivo /etc/group a un archivo llamado mensaje en el directorio prueba creado en el punto anterior.
 
+``` 
+cp /etc/group /home/pepe/prueba/mensaje
+```
+
+- Imagen de ejemplo
+
+[![8.png](https://i.postimg.cc/vHWtnr2N/8.png)](https://postimg.cc/svgWdhrY)
+
+7. Copiar mensaje en dir1, dir2 y dir3.
+
+``` 
+cp /home/pepe/prueba/mensaje /home/pepe/prueba/dir1
+cp /home/pepe/prueba/mensaje /home/pepe/prueba/dir2
+cp /home/pepe/prueba/mensaje /home/pepe/prueba/dir3
+```
+
+- Imagen de Ejemplo 
+
+[![9.png](https://i.postimg.cc/k4xqdMyG/9.png)](https://postimg.cc/KkvdP2wh)
+
+8. Copiar la carpeta prueba desde `/home/pepe` a `/home/maria`
+
+- Para copiar la carpeta prueba desde el directorio `/home/pepe` a `/home/maria`, podemos utilizar el comando cp con la opción -r para copiar recursivamente la carpeta y su contenido. De la siguiente forma
+
+``` 
+cp -r /home/pepe/prueba /home/maria
+```
+
+- Podemos verificar esto de la siguiente forma
+
+``` 
+ls /home/maria
+```
+
+- Imagen de ejemplo
+
+[![10.png](https://i.postimg.cc/d0d88NCb/10.png)](https://postimg.cc/5H4YJ3ng)
+
+9. Mover el directorio dir31 de maría y sus subdirectorios dentro de dir2.
+
+- Para mover el directorio `dir31` y sus subdirectorios desde `/home/maria/prueba/dir3` a `/home/maria/prueba/dir2`, podemos utilizar el comando `mv`. Aquí está el comando:
+
+- Primero debemos crear el directorio mkdir `/home/maria/prueba`
+
+``` 
+mkdir /home/maria/prueba
+```
+
+- Luego:
+
+``` 
+mv /home/maria/dir3/dir31 /home/maria/prueba/dir2/
+```
+
+- Podemos verificar esto de la siguiente forma:
+
+``` 
+ls /home/maria/prueba/dir2
+```
+ 
+- Imagen de ejemplo: 
+
+[![11.png](https://i.postimg.cc/k5gNh2w7/11.png)](https://postimg.cc/G46s4hZf)
+
+
+10. Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado enlacedir1.
+
+``` 
+ln -s /home/maria/prueba/dir1 /home/maria/prueba/dir3/enlacedir1
+```
+
+``` 
+ls -l /home/maria/prueba/dir3
+```
+
+- Imagen de Ejemplo:
+
+[![12.png](https://i.postimg.cc/7ZKCQmfW/12.png)](https://postimg.cc/MnjKn007)
+
+
+11. ¿Cuáles son los actuales permisos del directorio dir2?
+
+
+- Podemos utilizar el siguiente comando para ver los permisos:
+
+``` 
+ls -ld /home/maria/prueba/dir2
+```
+
+[![13.png](https://i.postimg.cc/3N6hv0R9/13.png)](https://postimg.cc/p5D3NTKn)
+
+
+12. Utilizando la notación simbólica (ugo rwx), eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio dir2.
+
+``` 
+chmod a-w /home/maria/prueba/dir2
+```
+
+- Podemos Verificarlo de la siguiente forma:
+
+``` 
+ls -ld /home/maria/prueba/dir2
+```
+
+- Imagen de Ejemplo:
+
+[![14.png](https://i.postimg.cc/9XNwpxwg/14.png)](https://postimg.cc/jCPjq4Xy)
+
+13. Utilizando la notación octal (4, 2 y 1), eliminar el permiso de lectura del directorio dir2, al resto de los usuarios.
+
+``` 
+chmod 111 /home/maria/prueba/dir2
+```
+
+- Podemos verificarlo de la siguiente forma:
+
+``` 
+ls -ld /home/maria/prueba/dir2
+```
+
+- Imagen de ejemplo:
+
+[![15.png](https://i.postimg.cc/HW21DK93/15.png)](https://postimg.cc/4nmSpWMh)
+
+
+
+
+
