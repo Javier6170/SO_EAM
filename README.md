@@ -1,5 +1,103 @@
 ## Parcial Sistema operativos - Parte 1
 
+### Previa - instalación
+Desde la pagina oficial de Debian podemos encontrar toda la información referente a esta distribución, en esta ocasión vamos a usar Debian 12 en AMDX644.
+
+En la parte inferior de la imagen anterior podemos ver que se nos ofrecen distintas herramientas y entre ellas una muy importante que es el manual de instalacion.
+
+ [![Descarga-1.jpg](https://i.postimg.cc/1Rj35PCJ/Descarga-1.jpg)](https://postimg.cc/5j8VscMC)
+
+Si nos dirigimos ahí, podemos ver que para cada arquitectura que queramos decargar, hay distintos formatos de manual en una cantidad considerable de idiomas.
+
+[![Descarga-manual.jpg](https://i.postimg.cc/28dhK27Q/Descarga-manual.jpg)](https://postimg.cc/crHvK7jC)
+
+Una vez elijamos la arquitectura que vamos a usar para Debian, empezamos instalando la ISO  de Debian.
+
+[![proceso-install.jpg](https://i.postimg.cc/MGrjkLLL/proceso-install.jpg)](https://postimg.cc/bGkvkmp0)
+
+Tenemos dos opciones, hacer la instalación en el disco duro de nuestra maquina o montarlo en una maquina virtual, en esta ocasión se hara en una maquina virtual.
+
+Cuando ya tengamos nuestra ISO de Debian instalada, nos dirigimos al software que usaremos para hacer el montaje de la maquina virtual y hacer la respectiva configuración.
+
+[![mv-1.jpg](https://i.postimg.cc/VNdMG1NT/mv-1.jpg)](https://postimg.cc/SXbJRBC7)
+
+- Primeramente definimos el nombre y que sistema operativo vamos a instalar.
+  
+  [![config-mv.jpg](https://i.postimg.cc/Cx4c8bPN/config-mv.jpg)](https://postimg.cc/cvr7ytNg)
+
+- Despues definimos el tamaño de la RAM.
+
+  [![config-ram.jpg](https://i.postimg.cc/c1Qw6057/config-ram.jpg)](https://postimg.cc/yW8kb4KW)
+
+- Luego escogemos la opción de crear un nuevo disco virtual.
+  
+  [![cong-disk.jpg](https://i.postimg.cc/1XH8BRLL/cong-disk.jpg)](https://postimg.cc/FkYFsvFZ)
+
+- Definimos el tipo de archivo que va a ser el disco.
+
+ [![conf-disk.jpg](https://i.postimg.cc/DyShBwkL/conf-disk.jpg)](https://postimg.cc/bsf4v8vw)
+
+- Definimos si el disco va a tener un tamaño fijo o va a ser dinamico.
+  
+  [![conf-space.jpg](https://i.postimg.cc/kMxY9rQz/conf-space.jpg)](https://postimg.cc/5j2SqRkS)
+
+- Ultimamente definimos que tamaño va a tener este.
+  [![conf-spacedisk.jpg](https://i.postimg.cc/wxc2ZXHd/conf-spacedisk.jpg)](https://postimg.cc/MXH1jjvs)
+
+- Ahora toca darle la imagen al SO accediendo a las configuraciones, luego al amacenamiento para insertarlo.
+
+ [![conf-disk-iso.jpg](https://i.postimg.cc/25tjzLDk/conf-disk-iso.jpg)](https://postimg.cc/gwvbsJjQ)
+
+- Iniciamos la maquina para hacer las respectivas configuraciones de sistema.
+
+  [![conf-so.jpg](https://i.postimg.cc/bYDLgZNQ/conf-so.jpg)](https://postimg.cc/dDF8ttC1)
+
+ - Descarga de paquetes necesarios para Debian
+   
+  [![conf-dowload.jpg](https://i.postimg.cc/B685mzsq/conf-dowload.jpg)](https://postimg.cc/bDh2J3sM)
+  
+- Despues hacemos configuraciones personalizadas que son las siguientes:
+  - Lenguaje
+    
+    [![conf-iso-languaje.jpg](https://i.postimg.cc/wMgX9jLB/conf-iso-languaje.jpg)](https://postimg.cc/qhDhL0mf)
+    
+  - Ubicación
+    
+    [![conf-so-ubi.jpg](https://i.postimg.cc/mgtQLqz7/conf-so-ubi.jpg)](https://postimg.cc/NKvybdx0)
+    
+  - Entrada de teclado
+  - nombre de maquina
+  - nombre de red
+  - dominio
+  - configuración de contraseña de superusuario
+    
+    [![conf-so-user.jpg](https://i.postimg.cc/5NfgVnSm/conf-so-user.jpg)](https://postimg.cc/yWrchh5J)
+    
+  - definir un usuario y su contraseña para iniciar
+
+- Configuración de partición guiada para el disco duro.
+
+  [![conf-so-part-disk.jpg](https://i.postimg.cc/PrP57k8s/conf-so-part-disk.jpg)](https://postimg.cc/WhcVDCnX)
+
+- Disco y particiones que se haran en el disco.
+  
+  [![fn-conf-disk-part.jpg](https://i.postimg.cc/QMtDFQkL/fn-conf-disk-part.jpg)](https://postimg.cc/dhzpXTxn)
+  
+- Confirmar la escritura del disco y montarlo en el sistema operativo.
+
+  [![write-disk.jpg](https://i.postimg.cc/Bb5kYbcc/write-disk.jpg)](https://postimg.cc/xNC6q0Zc)
+
+- Configuración de gestor de paquetes.
+
+  [![conf-gestor-pack.jpg](https://i.postimg.cc/W3Z0PJyr/conf-gestor-pack.jpg)](https://postimg.cc/ftwVckDT)
+
+- Elegir el entorno de escritorio.
+
+  [![conf-escritorio.jpg](https://i.postimg.cc/sX9DSp03/conf-escritorio.jpg)](https://postimg.cc/k6GmPtmH)
+  
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 1. Cree dos usuarios (maria y pepe), a cada uno se les debe asignar una contraseña y haga que ambos pertenezcan al mismo grupo.
 
 
