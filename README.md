@@ -28,10 +28,13 @@ sudo addgroup ingenieros
 sudo usermod -aG ingenieros maria
 sudo usermod -aG ingenieros pepe
 ```
-- Imagen de Ejemplo
+- Imagen de Ejemplo:
 
 [![Screenshot-from-2023-09-30-00-09-59.png](https://i.postimg.cc/7ZKM5mtM/Screenshot-from-2023-09-30-00-09-59.png)](https://postimg.cc/yDSS5XHk)
 
+- Ejemplo de como se ven los usuarios creados:
+
+[![7.png](https://i.postimg.cc/wxDgpDJx/7.png)](https://postimg.cc/kDMkN6fL)
 
 2. Listar todos los archivos (incluídos los ocultos) del directorio raíz. Use un paginador.
 
@@ -49,7 +52,7 @@ ls -a | less
 ls -l /etc/*t
 ```
 
-- Imagen de Ejemplo 
+- Imagen de Ejemplo :
 
 [![3.png](https://i.postimg.cc/g2GjCpDN/3.png)](https://postimg.cc/3db3GPzv)
 
@@ -88,6 +91,9 @@ mkdir -p /home/pepe/prueba/dir3/dir31/dir311
 mkdir -p /home/pepe/prueba/dir3/dir31/dir312
 ```
 
-- Ejemplo de imagen
+- Ejemplo de imagen:
 
 [![6.png](https://i.postimg.cc/5NCKhd0Y/6.png)](https://postimg.cc/yk7TRG0s)
+
+6. Copiar el archivo /etc/group a un archivo llamado mensaje en el directorio prueba creado en el punto anterior.
+
