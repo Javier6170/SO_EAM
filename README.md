@@ -222,6 +222,199 @@ ls -ld /home/maria/prueba/dir2
 [![15.png](https://i.postimg.cc/HW21DK93/15.png)](https://postimg.cc/4nmSpWMh)
 
 
+14. ¿Cuáles son ahora los permisos asociados a dir2?
+
+``` 
+ls -ld /home/maria/prueba/dir2
+```
+
+y lo podemos ver de la siguiente forma:
+
+[![15.png](https://i.postimg.cc/HW21DK93/15.png)](https://postimg.cc/4nmSpWMh)
+
+15. Crear bajo dir2, un directorio llamado dir2l.
+
+``` 
+mkdir /home/maria/prueba/dir2/dir2l
+```
+
+``` 
+ls /home/maria/prueba/dir2
+```
+
+- Ejemplo:
+
+[![16.png](https://i.postimg.cc/44bg7Gxz/16.png)](https://postimg.cc/t7TfwLPT)
+
+16. Concederse a sí mismo permiso de escritura en el directorio dir2 e intentar de nuevo el paso anterior.
+
+
+``` 
+ls /home/maria/prueba/dir2
+```
+
+``` 
+ls /home/maria/prueba/dir2
+```
+- Imagen de Ejemplo:
+
+[![17.png](https://i.postimg.cc/JzCZTbLw/17.png)](https://postimg.cc/svKMxGxK)
+
+17. ¿Cuáles son los permisos por omisión asignados a los archivos?
+
+## Permisos por Omisión Asignados a Archivos
+
+Los permisos por omisión asignados a los archivos en sistemas basados en UNIX y Linux, como Git, son generalmente 666. Esto se traduce en permisos `-rw-rw-rw-`, lo que significa que el propietario, el grupo y otros usuarios tienen permisos de lectura y escritura, pero no tienen permisos de ejecución. Estos valores pueden ser modificados por la configuración del sistema y por las configuraciones específicas del usuario. Es importante tener en cuenta que los permisos por omisión pueden ser influenciados por varias configuraciones, como la máscara de creación de archivos (umask), que especifica qué permisos se deben quitar de los permisos por omisión cuando se crea un nuevo archivo.
+
+18. ¿Cuáles son los permisos por omisión asignados a las carpetas?
+
+## Permisos por Omisión Asignados a Carpetas
+
+Los permisos por omisión asignados a las carpetas (directorios) en sistemas basados en UNIX y Linux, como Git, son generalmente 777. Esto se traduce en permisos `rwxrwxrwx`, lo que significa que el propietario, el grupo y otros usuarios tienen permisos de lectura, escritura y ejecución.
+
+Es importante señalar que estos valores pueden ser afectados por la configuración del sistema y las configuraciones específicas del usuario, como la `umask` que puede modificar los permisos por omisión al crear nuevos directorios.
+
+La `umask` especifica qué permisos se deben quitar de los permisos por omisión al crear un nuevo archivo o directorio. Por ejemplo, si la `umask` está configurada en 002, los permisos por omisión para un nuevo directorio serán `rwxrwxr-x` (775 en notación octal).
+
+En resumen, los permisos por omisión pueden variar según la configuración del sistema y la `umask`, pero típicamente los nuevos directorios tendrán permisos `rwxrwxrwx`.
+
+
+19. Elimine la carpeta dir2.  
+
+``` 
+rm -r /home/maria/prueba/dir2
+```
+
+Y para verificar esto con el comando:
+
+``` 
+ls /home/maria/prueba
+```
+
+- Imagen de Ejemplo:
+
+[![18.png](https://i.postimg.cc/Mp0Pt6gD/18.png)](https://postimg.cc/qNRxvTJh)
+
+20. Muestre en pantalla el estado de los recursos del computador. Uso de memoria, uso de CPU y procesos.
+
+## Uso de memoria
+
+``` 
+top
+```
+
+## Uso de Memoria Alternativa
+
+``` 
+free -m
+```
+
+## Lista de Procesos
+
+``` 
+ps aux
+```
+
+## Uso de CPU Alternativa
+
+``` 
+mpstat
+```
+
+## Uso de Memoria Alternativa
+
+``` 
+vmstat
+```
+
+- Ejemplo de como se podria ver:
+
+[![19.png](https://i.postimg.cc/VsDbq37C/19.png)](https://postimg.cc/Hj8xHP1Y)
+
+21. Listar únicamente los procesos que pertenezcan al usuario root.
+
+Con el siguiente comando:
+
+``` 
+ps aux | grep root
+```
+
+Si quires una lista mas detallada es con el siguiente comando:
+
+``` 
+ps -U root -u root u
+```
+
+- Imagen de Ejemplo:
+
+[![20.png](https://i.postimg.cc/kgFC8dsr/20.png)](https://postimg.cc/v4BCFkCX)
+
+22. Cree un archivo y con ayuda de nano o vi programe un script en Python que reciba como argumentos 5 números y verifique si dichos números hacen parte de la sucesión de fibonacci. 
+
+Con el siguiente comando:
+
+``` 
+nano verificar_fibonacci.py
+```
+
+23. Al archivo anterior asígnele permiso de ejecución al usuario y al grupo al que pertenezca, luego debe ejecutarlo para comprobar su funcionamiento. Ejemplo: para ejecutar el archivo se debería escribir: ./serie.py 2 12 43 64 21.
+
+[![21.png](https://i.postimg.cc/qR71kWjH/21.png)](https://postimg.cc/Y4J6Rn5d)
+
+24. Cambie el nombre del script anterior por otro. 
+
+``` 
+mv serie.py nuevo_nombre.py
+```
+
+[![22.png](https://i.postimg.cc/G3KsPHLK/22.png)](https://postimg.cc/bdGJpY2S)
+
+25. Investigue cómo se puede saber cuántos archivos y carpetas tiene un directorio. Haga la prueba con el directorio /usr/bin
+
+- Una forma de encontrar el conteo es:
+
+``` 
+ls -la /usr/bin | wc -l
+```
+- Otra forma de obtener el conteo es usando find:
+
+``` 
+find /usr/bin -maxdepth 1 -type f -o -type d | wc -l
+```
+
+[![23.png](https://i.postimg.cc/qv4J1G1C/23.png)](https://postimg.cc/LnQFXjKH)
+
+26. Instale en la máquina virtual un servidor openssh y cree una segunda máquina virtual para que se conecte a la primera usando ssh. Recuerde configurar ambas máquinas virtuales para que usen la configuración de red en modo Puente. Conéctese usando uno de los usuarios creados en el punto 1. Una vez conectado a la máquina uno, ejecute el script hecho en el punto 23.
+
+## Servidor SSH
+
+``` 
+sudo apt-get update
+sudo apt-get install openssh-server
+```
+``` 
+sudo nano /etc/ssh/sshd_config
+```
+``` 
+sudo systemctl restart ssh
+```
+
+[![24.png](https://i.postimg.cc/W36SwTzZ/24.png)](https://postimg.cc/PpJmtGmf)
+
+## Segunda Maquina
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
