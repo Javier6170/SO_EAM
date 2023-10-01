@@ -403,6 +403,23 @@ sudo systemctl restart ssh
 
 ## Segunda Maquina
 
+- Me conectare desde mi pc de Windows por conexión SSH de mobaXtreme
+
+[![25.png](https://i.postimg.cc/jStfyPNM/25.png)](https://postimg.cc/YhDjH4dF)
+
+- La ip de mi maquina virtual es 192.168.136.131 entonces hacemos la respectiva configuración en mobaXtreme
+
+## Configurando...
+
+[![26.png](https://i.postimg.cc/tgLCNGw9/26.png)](https://postimg.cc/FfV4h8h6)
+
+[![27.png](https://i.postimg.cc/MpChsZ63/27.png)](https://postimg.cc/ZWL7nSy6)
+
+[![28.png](https://i.postimg.cc/JzVqvsXX/28.png)](https://postimg.cc/LnDLZ6N4)
+
+- Y finalizando queda asi:
+
+[![29.png](https://i.postimg.cc/LXg1Jz5y/29.png)](https://postimg.cc/dkv1XZ8d)
 
 
 
