@@ -434,6 +434,23 @@ tar -czvf /ruta/del/otro/directorio/pepe_home.tar.gz /home/pepe
 
 28. Copie por medio de scp esta carpeta comprimida a la segunda máquina virtual.
 
+[![31.png](https://i.postimg.cc/tJXn28Dc/31.png)](https://postimg.cc/Q9yMM42g)
+
+[![32.png](https://i.postimg.cc/C1JxL5Hv/32.png)](https://postimg.cc/Fdd4T96c)
+
+```
+put /ruta/local/del/archivo/pepe_home.tar.gz
+```
+
+```
+ls
+```
+
+29. Una vez copiado el archivo comprimido, descomprímalo con tar. 
+
+
+
+
 
 
 
