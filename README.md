@@ -1,5 +1,7 @@
 ## Parcial Sistema operativos - Parte 1
 
+## Javier Rodriguez Marulanda - Luisa Pulido
+
 ### Previa - instalación
 Desde la pagina oficial de Debian podemos encontrar toda la información referente a esta distribución, en esta ocasión vamos a usar Debian 12 en AMDX644.
 
