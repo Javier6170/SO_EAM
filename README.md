@@ -446,7 +446,293 @@ put /ruta/local/del/archivo/pepe_home.tar.gz
 ls
 ```
 
-29. Una vez copiado el archivo comprimido, descomprímalo con tar. 
+30. Instale openjdk 11 en la máquina virtual.
+
+```
+sudo apt-get install openjdk-11-jdk
+```
+
+[![33.png](https://i.postimg.cc/D06hPMYB/33.png)](https://postimg.cc/dZhgq4Fy)
+
+31. Busque en la raíz, todas las carpetas que contengan la palabra “openjdk-11”. Solo busque carpetas, no archivos. Esta información nos dirá en qué carpeta fue instalado el jdk.
+
+- Como yo tengo el openjdk-17 buscamos de la siguiente forma:
+
+```
+sudo find / -type d -name '*openjdk-17*'
+```
+
+[![34.png](https://i.postimg.cc/W3t014kv/34.png)](https://postimg.cc/TLMKkf07)
+
+32. Ubíquese en la carpeta del usuario que tiene la sesión activa y descargue con wget el siguiente archivo:
+
+- https://gist.githubusercontent.com/carlosflorezvi/b8b5082d71629c5f16c750ec30f2d9f4/raw/a158b7f73f607d5405c5d40a0824550c210e715f/descarga.txt
+
+```
+wget https://gist.githubusercontent.com/carlosflorezvi/b8b5082d71629c5f16c750ec30f2d9f4/raw/a158b7f73f607d5405c5d40a0824550c210e715f/descarga.txt
+```
+
+[![36.png](https://i.postimg.cc/xdnRnY5f/36.png)](https://postimg.cc/K1pLD6Cw)
+
+33. Abra el anterior archivo usando cat, tail y head. Parametrice tail y head para que muestre los últimos 15 y los primeros 15 respectivamente. 
+
+```
+cat descarga.txt
+```
+
+```
+head -n 15 descarga.txt
+```
+
+[![37.png](https://i.postimg.cc/sfTDJJqw/37.png)](https://postimg.cc/rztkV58r)
+
+
+```
+tail -n 15 descarga.txt
+```
+
+[![38.png](https://i.postimg.cc/QxBsJZpd/38.png)](https://postimg.cc/crNVdj9p)
+
+34. Escriba un alias para ejecutar los comandos del punto anterior. Haga que sean persistentes, que siempre se puedan usar así se reinicie el computador. 
+
+```
+nano ~/.bashrc
+```
+
+```
+alias catdesc='cat descarga.txt'
+alias headdesc='head -n 15 descarga.txt'
+alias taildesc='tail -n 15 descarga.txt'
+```
+
+[![39.png](https://i.postimg.cc/RhLPcFXD/39.png)](https://postimg.cc/hQhbnSFL)
+
+- Carga el archivo de configuración para aplicar los cambios sin reiniciar:
+
+```
+source ~/.bashrc
+```
+
+35. Investigue qué es tmux, para qué sirve. Haga un ejemplo en la máquina virtual. 
+
+## Tmux
+
+es un multiplexor de terminales que permite a un usuario acceder a varias terminales dentro de una única ventana de terminal o incluso a través de una conexión remota. Proporciona una manera de ejecutar y gestionar múltiples sesiones de terminal en una sola ventana.
+
+Algunas características clave de tmux incluyen:
+
+1. *Sesiones:* Puedes tener múltiples sesiones de terminal en una única ventana.
+
+2. *Paneles:* Puedes dividir la ventana en varios paneles horizontales o verticales, cada uno con su propia sesión o comando.
+
+3. *Persistencia:* Puedes desconectarte de una sesión y luego volver a conectarte más tarde, manteniendo el estado de la sesión.
+
+4. *Personalización:* tmux es altamente configurable y puedes personalizar la disposición de las ventanas y la apariencia según tus preferencias.
+
+## Ejemplo de Uso:
+
+```
+sudo apt-get install tmux
+```
+
+[![40.png](https://i.postimg.cc/dtvQvxds/40.png)](https://postimg.cc/XXH6kxQm)
+
+36. Hacer una comparación entre bash y zsh. ¿Qué ventajas tiene zsh sobre bash?
+
+*Bash* (Bourne Again SHell) y *Zsh* (Z Shell) son intérpretes de comandos de Unix ampliamente utilizados. Ambos son poderosos y versátiles, pero hay algunas diferencias clave. Aquí hay una comparación general, destacando algunas ventajas que Zsh tiene sobre Bash:
+
+## Similaridades:
+
+1. *Sintaxis de Comandos:*
+
+- Ambos Bash y Zsh comparten una sintaxis de comandos similar y muchas características básicas.
+
+2. *Compatibilidad:*
+
+- Muchos scripts de Bash se ejecutarán en Zsh con pocos o ningún cambio, ya que Zsh fue diseñado para ser compatible con el Bourne Shell y el Bash.
+
+# Ventajas de Zsh sobre Bash:
+
+1. *Autocompletado Mejorado:*
+
+- Zsh tiene un sistema de autocompletado más avanzado y personalizable que Bash. Incluye sugerencias y autocompletado de rutas con opciones.
+
+2. *Corrección de Errores en Tiempo Real:*
+
+- Zsh ofrece corrección de errores en tiempo real, sugiriendo posibles correcciones mientras escribes comandos. Puedes aceptar la sugerencia con una tecla.
+
+3. *Temas y Personalización de la Interfaz:*
+
+- Zsh permite una personalización más avanzada y fácil de la apariencia del prompt y temas (oh-my-zsh es una popular framework para ello).
+
+4. *Mejor Historial de Comandos:*
+
+- El historial de comandos de Zsh es más avanzado, permitiendo una búsqueda más eficiente y opciones de manipulación del historial.
+
+5. *Completado de Argumentos y Opciones:*
+
+- Zsh proporciona completado de argumentos y opciones de comandos de una manera más inteligente y avanzada.
+
+6. *Expansiones de Parámetros:*
+
+- Zsh tiene expansiones de parámetros más poderosas y flexibles.
+
+7. *Conjuntos de Características Avanzadas:*
+
+- Zsh tiene muchas características avanzadas, como la programación de notificaciones cuando un comando largo ha terminado.
+
+8. *Mejor Soporte para UTF-8:*
+
+- Zsh tiene mejor soporte para caracteres Unicode y UTF-8 en comparación con Bash.
+
+9. *Plug-ins y Frameworks:*
+
+- Zsh tiene frameworks como oh-my-zsh que facilitan la instalación de complementos y temas.
+
+# Consideraciones Finales:
+
+La elección entre Bash y Zsh a menudo se reduce a las preferencias personales y al entorno de trabajo. Mientras que Bash es el intérprete de comandos predeterminado en muchas distribuciones de Linux y es más común en scripts y configuraciones de sistemas, Zsh es conocido por su potencia y funcionalidades adicionales para los usuarios interactivos.
+
+Si estás acostumbrado a Bash y estás satisfecho con su rendimiento, es posible que no necesites cambiar a Zsh. Sin embargo, si buscas características avanzadas, autocompletado mejorado y una experiencia interactiva más rica, Zsh podría ser una excelente opción. Muchos usuarios encuentran que la transición a Zsh, especialmente con marcos como oh-my-zsh, mejora su eficiencia y experiencia de línea de comandos.
+
+
+37. Cuál es el sistema de archivos usado en cada partición del disco de almacenamiento y cuál es su tamaño asignado, usado y libre.
+
+```
+df -h
+```
+
+[![41.png](https://i.postimg.cc/bwhmm1KF/41.png)](https://postimg.cc/Wh5m3qpM)
+
+38. Investigue qué es un pipe (|), para qué sirve y escriba al menos 3 ejemplos de su uso.
+
+Un pipe (|) es un operador en sistemas basados en Unix y en la línea de comandos que se utiliza para canalizar la salida de un comando como entrada a otro. En otras palabras, toma el resultado de un comando y lo pasa como entrada al siguiente comando, permitiendo la combinación de varios comandos en una secuencia.
+
+La sintaxis básica es:
+
+```
+comando1 | comando2
+```
+
+# Ejemplos de Uso
+
+1. *Filtrado de Resultados:*
+
+```
+ls -l | grep ".txt"
+```
+
+2. *Conteo de Resultados:*
+
+```
+cat archivo.txt | wc -l
+```
+
+3. *Ordenación de Resultados:*
+
+```
+ps aux | sort -nk 3
+```
+
+[![42.png](https://i.postimg.cc/LXLqQZdN/42.png)](https://postimg.cc/FdFs7zHL)
+
+39. Ejecute el comando top que permita monitorizar únicamente los procesos por un determinado ID.
+
+[![43.png](https://i.postimg.cc/Qxxt1zM6/43.png)](https://postimg.cc/Z024hVp3)
+
+40. Investigar cómo se puede programar la ejecución de un script dentro del sistema, a una hora y fecha específica. Haga un ejemplo en su máquina virtual. 
+
+Para programar la ejecución de un script en un momento específico, puedes utilizar la herramienta cron en sistemas basados en Unix, como Linux. cron es un servicio de programación de tareas que permite a los usuarios ejecutar comandos o scripts automáticamente en momentos específicos, como horas del día, días de la semana, etc.
+
+## Pasos para Programar un Script con `cron`:
+
+1. *Abrir el Editor de Cron:*
+
+Puedes editar las tareas programadas del cron utilizando el comando `crontab -e`. Esto abrirá el archivo cron en el editor predeterminado.
+
+```
+crontab -e
+```
+
+2. *Especificar el Momento de Ejecución:*
+
+Añade una línea al archivo crontab especificando cuándo quieres que se ejecute tu script. Por ejemplo, para ejecutar el script todos los días a las 8:30 AM, puedes añadir:
+
+```
+30 8 * * * /ruta/al/your_script.sh
+```
+- El primer número (30) especifica los minutos.
+- El segundo número (8) especifica la hora.
+- El asterisco (*) significa "todos los días del mes".
+- Otro asterisco significa "todos los meses".
+- El último asterisco significa "todos los días de la semana".
+
+Puedes ajustar estos valores según tus necesidades.
+
+3. *Guardar y Salir:*
+
+Guarda y cierra el editor para aplicar los cambios.
+
+4. *Verificar las Tareas Programadas:*
+
+Puedes ver las tareas programadas de tu usuario con el siguiente comando:
+
+```
+crontab -l
+```
+
+## Ejemplo
+
+1. Creamos un script myscript.sh:
+
+```
+nano myscript.sh
+```
+
+y agregamos lo siguiente:
+
+```
+#!/bin/bash
+
+# Ruta al archivo de registro
+LOG_FILE="/ruta/del/registro.txt"
+
+# Mensaje a imprimir en el registro
+echo "Ejecutando myscript.sh a las $(date)" >> "$LOG_FILE"
+
+# Coloca aquí el resto de tu lógica de script...
+# Por ejemplo:
+# comando1
+# comando2
+```
+
+3. Permisos de ejecución al script:
+
+```
+chmod +x myscript.sh
+```
+
+4. Abrimos el editor de crontab:
+
+```
+crontab -e
+```
+
+5. Añadimos la línea para ejecutar tu script a las 8:30 AM todos los días:
+
+```
+30 8 * * * /ruta/al/myscript.sh
+```
+
+6. Guarda y cierra el editor de crontab.
+
+- Ahora,`myscript.sh` se ejecutará todos los días a las 8:30 AM y registrará un mensaje en el archivo especificado. Puedes personalizar el script según lo que necesites que haga en realidad.
+
+[![44.png](https://i.postimg.cc/rm0HBMgh/44.png)](https://postimg.cc/qhrQnfPn)
+
+- Y terminamos creando la ejecución
+
+[![45.png](https://i.postimg.cc/LX1yyv6w/45.png)](https://postimg.cc/N9Q7F6Xk)
 
 
 
@@ -458,9 +744,5 @@ ls
 
 
 
-
-
-
-
-
+ 
 
