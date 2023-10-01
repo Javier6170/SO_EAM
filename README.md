@@ -421,6 +421,18 @@ sudo systemctl restart ssh
 
 [![29.png](https://i.postimg.cc/LXg1Jz5y/29.png)](https://postimg.cc/dkv1XZ8d)
 
+27. Comprima la carpeta personal del usuario pepe usando tar y gzip.
+
+``` 
+mkdir -p /ruta/del/otro/directorio/
+```
+``` 
+tar -czvf /ruta/del/otro/directorio/pepe_home.tar.gz /home/pepe
+```
+
+[![30.png](https://i.postimg.cc/SR81f2Td/30.png)](https://postimg.cc/gLzKYJPL)
+
+28. Copie por medio de scp esta carpeta comprimida a la segunda máquina virtual.
 
 
 
