@@ -80,7 +80,7 @@ func main() {
 go run mayor.go
 ```
 
-# Llamada del Sistema GO
+# Llamada del Sistema *GO*
 
 - Ahora hacemos una llamada al sistema con el siguiente comando:
 
@@ -173,7 +173,7 @@ echo "El número más grande es: $maximo"
 
 - Funciona correctamente felicidades!
 
-# Llamada del Sistema Bash
+# Llamada del Sistema *Bash*
 
 ```
 El número más grande es: 9
@@ -217,4 +217,91 @@ El número más grande es: 9
 100.00    0.000000           0       113         3 total
 ```
 
-- Obtuvimos que solo se hicieron 113 llamadas del sistema 
+- Obtuvimos que solo se hicieron 113 llamadas del sistema
+
+## C
+
+Empezamos instalando GCC:
+
+```
+sudo apt-get install build-essential
+```
+
+[![6.png](https://i.postimg.cc/HkbD0Hqz/6.png)](https://postimg.cc/0z5BPg2K)
+
+creamos nuestro codigo:
+
+```
+vim mayor.c
+```
+
+el codigo fuente es el siguiente:
+
+```
+#include <stdio.h>
+
+int encontrarMaximo(int numeros[], int longitud) {
+    if (longitud == 0) {
+        // Manejar el caso de una lista vacía
+        return 0;
+    }
+
+    int maximo = numeros[0];
+
+    for (int i = 1; i < longitud; ++i) {
+        if (numeros[i] > maximo) {
+            maximo = numeros[i];
+        }
+    }
+
+    return maximo;
+}
+
+int main() {
+    // Lista de números
+    int numeros[] = {4, 7, 2, 9, 1, 5, 8};
+    int longitud = sizeof(numeros) / sizeof(numeros[0]);
+
+    // Encontrar el número más grande
+    int maximo = encontrarMaximo(numeros, longitud);
+
+    // Imprimir el resultado
+    printf("El número más grande es: %d\n", maximo);
+
+    return 0;
+}
+```
+
+y la ejecución es la siguiente:
+
+[![7.png](https://i.postimg.cc/W1zSj7nk/7.png)](https://postimg.cc/hXFV1TND)
+
+
+# Llamada del Sistema *C*
+
+```
+root@debian:/home/javi-code/Documents/SO_EAM/Taller 3.1/files# strace -c ./mayorc
+El número más grande es: 9
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 47.72    0.000157         157         1           execve
+ 20.06    0.000066           8         8           mmap
+  5.78    0.000019           6         3           mprotect
+  4.56    0.000015           5         3           newfstatat
+  4.26    0.000014          14         1           munmap
+  4.26    0.000014           7         2           openat
+  3.34    0.000011          11         1         1 access
+  3.04    0.000010          10         1           write
+  1.82    0.000006           2         3           brk
+  0.91    0.000003           3         1           read
+  0.91    0.000003           1         2           pread64
+  0.91    0.000003           3         1           getrandom
+  0.61    0.000002           1         2           close
+  0.61    0.000002           2         1           prlimit64
+  0.30    0.000001           1         1           arch_prctl
+  0.30    0.000001           1         1           set_tid_address
+  0.30    0.000001           1         1           set_robust_list
+  0.30    0.000001           1         1           rseq
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000329           9        34         1 total
+```
