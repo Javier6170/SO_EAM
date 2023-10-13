@@ -393,7 +393,7 @@ Python 3                      342
 ----------- --------------------- 
 ```
 
-## PArte 2
+## Parte 2
 
 
 - Ir a la presentación de Gestión de Procesos y realizar la práctica que inicia en la diapositiva 16.
