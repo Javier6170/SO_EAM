@@ -81,7 +81,7 @@ strace -c java ./numeroMayor.java
 
 
 ```
-strace -c -S java ./numeroMayor.java
+strace -c -S name java ./numeroMayor.java
 ```
 [![strace-c-s-java.png](https://i.postimg.cc/YSWx8ZNL/strace-c-s-java.png)](https://postimg.cc/GBbYmM5b)
 
