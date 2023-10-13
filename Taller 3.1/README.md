@@ -9,6 +9,8 @@ En parejas realizar lo siguiente:
 
 ## Soluciòn
 
+## GO
+
 Empezamos instalando Go:
 
 ```
@@ -78,6 +80,8 @@ func main() {
 go run mayor.go
 ```
 
+# Llamada del Sistema GO
+
 - Ahora hacemos una llamada al sistema con el siguiente comando:
 
 ```
@@ -132,3 +136,85 @@ El número más grande es: 9
 
 [![4.png](https://i.postimg.cc/ZKvTXPhf/4.png)](https://postimg.cc/9rV5770T)
 
+
+## Bash
+
+- Creamos nuestro script con vim
+
+```
+vim mayor.bash
+```
+
+- Y añadimos el codigo:
+
+```
+#!/bin/bash
+
+# Lista de números
+numeros=(4 7 2 9 1 5 8)
+
+# Inicializar la variable que almacenará el número más grande
+maximo=${numeros[0]}
+
+# Recorrer la lista para encontrar el número más grande
+for numero in "${numeros[@]}"; do
+    if ((numero > maximo)); then
+        maximo=$numero
+    fi
+done
+
+# Imprimir el resultado
+echo "El número más grande es: $maximo"
+```
+
+- Luego lo ejecutamos:
+
+[![5.png](https://i.postimg.cc/ZYvNxMqn/5.png)](https://postimg.cc/NLYLgbmv)
+
+- Funciona correctamente felicidades!
+
+# Llamada del Sistema Bash
+
+```
+El número más grande es: 9
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0.00    0.000000           0         5           read
+  0.00    0.000000           0         1           write
+  0.00    0.000000           0         7           close
+  0.00    0.000000           0         3           lseek
+  0.00    0.000000           0        14           mmap
+  0.00    0.000000           0         4           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0        14           rt_sigaction
+  0.00    0.000000           0         5           rt_sigprocmask
+  0.00    0.000000           0         2         1 ioctl
+  0.00    0.000000           0         2           pread64
+  0.00    0.000000           0         1         1 access
+  0.00    0.000000           0         1           dup2
+  0.00    0.000000           0         3           getpid
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           uname
+  0.00    0.000000           0         3         1 fcntl
+  0.00    0.000000           0         1           sysinfo
+  0.00    0.000000           0         1           getuid
+  0.00    0.000000           0         1           getgid
+  0.00    0.000000           0         1           geteuid
+  0.00    0.000000           0         1           getegid
+  0.00    0.000000           0         3           getppid
+  0.00    0.000000           0         1           getpgrp
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           futex
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         7           openat
+  0.00    0.000000           0        17           newfstatat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         3           prlimit64
+  0.00    0.000000           0         1           getrandom
+  0.00    0.000000           0         1           rseq
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000000           0       113         3 total
+```
+
+- Obtuvimos que solo se hicieron 113 llamadas del sistema 
