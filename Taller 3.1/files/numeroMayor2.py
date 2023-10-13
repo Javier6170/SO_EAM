@@ -12,4 +12,5 @@ def encontrar_maximo(lista):
 # Ejemplo de uso
 lista_numeros = [5, 2, 9, 1, 7, 6]
 resultado = encontrar_maximo(lista_numeros)
-print "El número más grande es:", resultado
+print("El número más grande es:", resultado)
+
