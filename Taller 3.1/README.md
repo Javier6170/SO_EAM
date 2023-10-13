@@ -308,6 +308,7 @@ El número más grande es: 9
 ```
 
 
+## Python 3
 
 Empezamos con python3
 
@@ -332,6 +333,8 @@ strace -c -S name  python3 ./numeroMayor3.py:
 [![strace-c-s.png](https://i.postimg.cc/44tQg6Vp/strace-c-s.png)](https://postimg.cc/ThdDjWkP)
 
 
+## Python 2
+
 Empezamos con python2
 
 - Creammos el scrip para Python 2:
@@ -341,6 +344,8 @@ Empezamos con python2
 - Ahora hacemos las llamadas al sistema
 
 No se puede ejecutar Python2 en debian 12 ya que Python 2 no está disponible en los repositorios de Debian 12 (Bookworm) por defecto, ya que Python 2 ha sido descontinuado y no se encuentra en los repositorios oficiales de Debian. En su lugar, se recomienda utilizar Python 3 para nuevos proyectos y tareas.
+
+## Java
 
 Empezamos con java
 
