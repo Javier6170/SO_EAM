@@ -65,3 +65,5 @@ strace python2 ./numeroMayor2.py :
 
 
 
+
+
