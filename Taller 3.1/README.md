@@ -57,9 +57,8 @@ Empezamos con python2
 
 - Ahora hacemos las llamadas al sistema
 
-```
 No se puede ejecutar Python2 en debian 12 ya que Python 2 no está disponible en los repositorios de Debian 12 (Bookworm) por defecto, ya que Python 2 ha sido descontinuado y no se encuentra en los repositorios oficiales de Debian. En su lugar, se recomienda utilizar Python 3 para nuevos proyectos y tareas.
-```
+
 Empezamos con java
 
 - Creamos el scrip para java:
