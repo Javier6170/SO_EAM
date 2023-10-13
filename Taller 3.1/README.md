@@ -58,9 +58,33 @@ Empezamos con python2
 - Ahora hacemos las llamadas al sistema
 
 ```
-strace python2 ./numeroMayor2.py :
+No se puede ejecutar Python2 en debian 12 ya que Python 2 no está disponible en los repositorios de Debian 12 (Bookworm) por defecto, ya que Python 2 ha sido descontinuado y no se encuentra en los repositorios oficiales de Debian. En su lugar, se recomienda utilizar Python 3 para nuevos proyectos y tareas.
 ```
+Empezamos con java
 
+- Creamos el scrip para java:
+
+[![JAVA.png](https://i.postimg.cc/mDpKM0Tz/JAVA.png)](https://postimg.cc/yg9fCpgs)
+
+
+- Ahora hacemos las llamadas al sistema
+
+```
+strace java ./numeroMayor.java
+```
+[![strace-java.png](https://i.postimg.cc/gj9QN36m/strace-java.png)](https://postimg.cc/njk3LjkP)
+
+
+```
+strace -c java ./numeroMayor.java
+```
+[![strace-c-java.png](https://i.postimg.cc/xdh41L5M/strace-c-java.png)](https://postimg.cc/LqkTyYr8)
+
+
+```
+strace -c -S java ./numeroMayor.java
+```
+[![strace-c-s-java.png](https://i.postimg.cc/YSWx8ZNL/strace-c-s-java.png)](https://postimg.cc/GBbYmM5b)
 
 
 
